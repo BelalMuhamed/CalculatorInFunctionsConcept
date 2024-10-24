@@ -2,11 +2,12 @@
 using namespace std;
 double Number1 = 0, Number2 = 0;
 int Operation = 0;
-int Result = 0;
+double Result = 0;
+void CalculatorFunc();
 int main()
 {
 	
-	
+	CalculatorFunc();
 }
 /*this function used to take numbers only from user and return those using &(calling by reference )
 in defensive code */
@@ -90,3 +91,41 @@ bool Divide(double Num01, double Num02,double &Result)
 	}
 }
 #pragma endregion
+
+#pragma region Calculator
+void CalculatorFunc()
+{
+	TakeTwoNumbersFromUser(Number1, Number2);
+	ChooseOperation(Operation);
+	switch (Operation)
+	{
+	case 1:
+		Sum(Number1, Number2, Result);
+		cout << Result;
+		break;
+	case 2:
+		Subtract(Number1, Number2, Result);
+		cout << Result;
+		break;
+	case 3:
+		Multiply(Number1, Number2, Result);
+		cout << Result;
+		break;
+			
+	default:
+		if (Divide(Number1, Number2, Result))
+		{
+			cout << Result;
+		}
+		else
+		{
+			
+			CalculatorFunc();
+
+		}
+		
+		break;
+	}
+}
+#pragma endregion
+
