@@ -1,9 +1,12 @@
 #include <iostream>
 using namespace std;
+double Number1 = 0, Number2 = 0;
+int Operation = 0;
+int Result = 0;
 int main()
 {
-	double Number1 = 0, Number2 = 0;
-	int Operation=0;
+	
+	
 }
 /*this function used to take numbers only from user and return those using &(calling by reference )
 in defensive code */
@@ -58,3 +61,32 @@ void ChooseOperation(int& Operation)
 }
 #pragma endregion
 
+#pragma region OperationsFunctions
+bool Sum(double Num01, double Num02, double& Result)
+{
+	Result = Num01 + Num02;
+	return true;
+}
+bool Subtract(double Num01, double Num02, double& Result)
+{
+	Result = Num01 - Num02;
+	return true;
+}
+bool Multiply(double Num01, double Num02,double &Result)
+{
+	Result =Num01 * Num02;
+	return true;
+}
+bool Divide(double Num01, double Num02,double &Result)
+{
+	if (Num02 == 0)
+	{
+		return false;
+	}
+	else
+	{
+		Result = Num01 / Num02;
+		return true;
+	}
+}
+#pragma endregion
