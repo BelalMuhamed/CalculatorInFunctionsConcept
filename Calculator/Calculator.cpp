@@ -31,4 +31,30 @@ void TakeTwoNumbersFromUser(double &Number1,double &Number2)
 }
 #pragma endregion
 
+#pragma region ChooseOperationFunction
+void ChooseOperation(int& Operation)
+{
+	while (true)
+	{
+		cout << "Choose Your Operation from this Menu";
+		cout << " choose 1 for +";
+		cout << " choose 2 for -";
+		cout << " choose 3 for *";
+		cout << " choose 4 for /";
+		cin >> Operation;
+		if (Operation > 4 || Operation < 0 || cin.fail())
+		{
+			cout << "Your cohice isn't correct please choose again";
+			cin.clear();
+			cin.ignore(10000, '\n');
+		}
+		else
+		{
+			break;
+		}
+
+	}
+
+}
+#pragma endregion
 
